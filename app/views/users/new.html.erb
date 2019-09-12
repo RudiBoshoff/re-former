@@ -28,7 +28,11 @@
 -->
 
 <%# RAILS FORM CREATION WITH FORM_FOR %>
+<<<<<<< HEAD
 <%= form_for @user do |f|%>
+=======
+<%= form_for :user, url: users_path do |f|%>
+>>>>>>> 4cd4dae15232f4f77461f95bd088080918c3b281
     <%= f.label :username, 'Enter your username' %><br>
     <%= f.text_field :username%><br>
     <%= f.label :email %><br>
