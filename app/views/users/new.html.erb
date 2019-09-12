@@ -4,12 +4,16 @@
 <!--
 <form action="/users" method="post" name="users" accept-charset="UTF-8">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>%">
+
     <label for="user[username]">Username</label> <br>
     <input id="username" type="text" name="user[username]"> <br>
+
     <label for="user[email]">Email</label> <br>
     <input id="email" type="email" name="user[email]"> <br>
+
     <label for="user[password]">Password</label> <br>
     <input id="password" type="password" name="user[password]"> <br>
+
     <input id="submit" type="submit" value="create user">
 </form>
 -->
@@ -19,10 +23,13 @@
 <%= form_tag("/users", method: "post") do %>
     <%= label_tag(:username, "Username") %><br>
     <%= text_field_tag(:username)%><br>
+
     <%= label_tag(:email, "Email")%><br>
     <%= email_field_tag(:email)%><br>
+
     <%= label_tag(:password, "Password")%><br>
     <%= password_field_tag(:password)%><br>
+    
     <%= submit_tag("Create User")%>
 <%end%>
 -->
