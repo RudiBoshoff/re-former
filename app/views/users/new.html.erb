@@ -29,18 +29,44 @@
 
     <%= label_tag(:password, "Password")%><br>
     <%= password_field_tag(:password)%><br>
-    
+
     <%= submit_tag("Create User")%>
 <%end%>
 -->
 
+<!--
 <%# RAILS FORM CREATION WITH FORM_FOR %>
 <%= form_for @user do |f|%>
     <%= f.label :username, 'Enter your username' %><br>
     <%= f.text_field :username%><br>
+
     <%= f.label :email %><br>
     <%= f.email_field :email, placeholder: "Email@example.com"%><br>
+
     <%= f.label :password %><br>
     <%= f.password_field :password%> <br>
+
+    <%= f.submit %>
+<%end%>
+-->
+
+<%# RAILS FORM FOR WITH ERRORS %>
+
+<%= form_for @user do |f|%>
+    <ul>
+        <% @user.errors.full_messages.each do |error|%>
+            <li><%= error%></li>
+        <% end %>
+    </ul>
+    
+    <%= f.label :username, 'Enter your username' %><br>
+    <%= f.text_field :username%><br>
+
+    <%= f.label :email %><br>
+    <%= f.email_field :email, placeholder: "Email@example.com"%><br>
+
+    <%= f.label :password %><br>
+    <%= f.password_field :password%> <br>
+
     <%= f.submit %>
 <%end%>
