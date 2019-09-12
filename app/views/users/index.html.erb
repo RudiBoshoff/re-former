@@ -1,0 +1,10 @@
+<%# NOT PART OF INSTRUCTIONS %>
+<h1>List of form entries</h1>
+
+<ul>
+    <% @user.each do |user|%>
+        <li><%=user.username%> <%= user.email%>  <%=link_to 'edit user', edit_user_path(user)%></li>
+    <%end%>
+</ul>
+
+<%= link_to 'new user', new_user_path %>

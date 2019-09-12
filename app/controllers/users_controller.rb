@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+    def index
+        # NOT PART OF INSTRUCTIONS
+        @user = User.all
+    end
+    
     def create
         # MANUAL FORM
         # @user = User.new(username: params[:username], email: params[:email], password: params[:password])
@@ -7,7 +12,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
 
         if @user.save
-            redirect_to new_user_path
+            redirect_to users_path
         else
             render :new
         end
@@ -25,7 +30,7 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
         if @user.save
             @user.update(user_params)
-            redirect_to edit_user_path(@user)
+            redirect_to users_path
         else
             render :edit
         end
